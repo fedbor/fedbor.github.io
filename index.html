@@ -13,8 +13,90 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎓</text></svg>">
 
     <style>
-      /* Keep all CSS as is, no language-specific content */
+      
+      :root {
+        --bg: #0b1020;
+        --panel: #10172a;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --brand: #0ea5e9;
+        --ring: rgba(14,165,233,0.35);
+        --card: #0f172a;
+        --link: #38bdf8;
+        --code: #eab308;
+      }
+      :root.light {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --brand: #0284c7;
+        --ring: rgba(2,132,199,0.25);
+        --card: #f1f5f9;
+        --link: #0369a1;
+        --code: #a16207;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+        background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent),
+                    radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent),
+                    var(--bg);
+        color: var(--text);
+      }
+      .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+      .skip-link { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+      .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; background: var(--panel); color: var(--text); padding: 8px 12px; border-radius: 10px; outline: 2px solid var(--brand); }
+
+      header {
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(10px);
+        background: color-mix(in oklab, var(--bg) 80%, transparent);
+        border-bottom: 1px solid color-mix(in oklab, var(--panel) 70%, transparent);
+      }
+      .nav {
+        display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 12px 24px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .brand .dot { width: 12px; height: 12px; border-radius: 999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #6366f1); box-shadow: 0 0 0 6px var(--ring); }
+      .nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+      .nav a:hover { color: var(--text); }
+      .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+      .btn {
+        border: 1px solid color-mix(in oklab, var(--brand) 40%, var(--panel));
+        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent));
+        color: var(--text); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 700;
+      }
+      .btn:hover { box-shadow: 0 0 0 6px var(--ring); }
+
+      .hero { padding: 48px 24px 10px; }
+      .hero h1 { font-size: clamp(28px, 5vw, 44px); margin: 0; }
+      .hero p.role { margin: 6px 0 12px; color: var(--muted); font-size: 18px; }
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+      .tag { background: var(--card); color: var(--muted); border: 1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding: 6px 10px; border-radius: 999px; }
+
+      .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      @media (min-width: 880px) {
+        .grid { grid-template-columns: 2fr 1fr; }
+      }
+
+      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border: 1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius: 18px; padding: 18px; }
+      .card h2 { margin: 0 0 8px; font-size: 22px; }
+      .muted { color: var(--muted); }
+      .list { display: grid; gap: 12px; }
+      .pub { display: grid; gap: 6px; padding: 12px; border: 1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius: 14px; background: color-mix(in oklab, var(--card) 80%, transparent); }
+      .pub .title { font-weight: 700; }
+      .pub .meta { font-size: 14px; color: var(--muted); }
+      .section { margin-top: 24px; }
+
+      footer { margin: 40px 0 20px; color: var(--muted); font-size: 14px; text-align: center; }
+      a { color: var(--link); }
+      code { color: var(--code); font-weight: 700; }
     </style>
+    
 
     <script type="application/ld+json">
       {
@@ -159,3 +241,4 @@
     </script>
   </body>
 </html>
+
