@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Federico Borazio – PhD Student | Curriculum Vitae</title>
+    <meta name="description" content="Curriculum accademico di Nome Cognome, PhD student. Pubblicazioni, progetti, insegnamenti, contatti." />
+    <meta property="og:title" content="Nome Cognome – PhD | Curriculum" />
+    <meta property="og:description" content="Pubblicazioni, progetti, insegnamenti, contatti." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://username.github.io/" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎓</text></svg>">
+
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #10172a;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --brand: #0ea5e9;
+        --ring: rgba(14,165,233,0.35);
+        --card: #0f172a;
+        --link: #38bdf8;
+        --code: #eab308;
+      }
+      :root.light {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --brand: #0284c7;
+        --ring: rgba(2,132,199,0.25);
+        --card: #f1f5f9;
+        --link: #0369a1;
+        --code: #a16207;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+        background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent),
+                    radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent),
+                    var(--bg);
+        color: var(--text);
+      }
+      .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+      .skip-link { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+      .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; background: var(--panel); color: var(--text); padding: 8px 12px; border-radius: 10px; outline: 2px solid var(--brand); }
+
+      header {
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(10px);
+        background: color-mix(in oklab, var(--bg) 80%, transparent);
+        border-bottom: 1px solid color-mix(in oklab, var(--panel) 70%, transparent);
+      }
+      .nav {
+        display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 12px 24px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+      .brand .dot { width: 12px; height: 12px; border-radius: 999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #6366f1); box-shadow: 0 0 0 6px var(--ring); }
+      .nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+      .nav a:hover { color: var(--text); }
+      .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+      .btn {
+        border: 1px solid color-mix(in oklab, var(--brand) 40%, var(--panel));
+        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent));
+        color: var(--text); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 700;
+      }
+      .btn:hover { box-shadow: 0 0 0 6px var(--ring); }
+
+      .hero { padding: 48px 24px 10px; }
+      .hero h1 { font-size: clamp(28px, 5vw, 44px); margin: 0; }
+      .hero p.role { margin: 6px 0 12px; color: var(--muted); font-size: 18px; }
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+      .tag { background: var(--card); color: var(--muted); border: 1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding: 6px 10px; border-radius: 999px; }
+
+      .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      @media (min-width: 880px) {
+        .grid { grid-template-columns: 2fr 1fr; }
+      }
+
+      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border: 1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius: 18px; padding: 18px; }
+      .card h2 { margin: 0 0 8px; font-size: 22px; }
+      .muted { color: var(--muted); }
+      .list { display: grid; gap: 12px; }
+      .pub { display: grid; gap: 6px; padding: 12px; border: 1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius: 14px; background: color-mix(in oklab, var(--card) 80%, transparent); }
+      .pub .title { font-weight: 700; }
+      .pub .meta { font-size: 14px; color: var(--muted); }
+      .section { margin-top: 24px; }
+
+      footer { margin: 40px 0 20px; color: var(--muted); font-size: 14px; text-align: center; }
+      a { color: var(--link); }
+      code { color: var(--code); font-weight: 700; }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nome Cognome",
+        "jobTitle": "PhD Student",
+        "url": "https://username.github.io/",
+        "email": "mailto:nome.cognome@example.com",
+        "sameAs": [
+          "https://scholar.google.com/citations?user=XXXX",
+          "https://orcid.org/0000-0000-0000-0000",
+          "https://github.com/username",
+          "https://www.linkedin.com/in/username/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Nome Cognome</span>
+        </div>
+        <nav class="nav-links" aria-label="Sezioni principali">
+          <a href="#about">About</a>
+          <a href="#pubblicazioni">Pubblicazioni</a>
+          <a href="#progetti">Progetti</a>
+          <a href="#insegnamento">Insegnamento</a>
+          <a href="#contatti">Contatti</a>
+          <button id="theme" class="btn" type="button" aria-label="Cambia tema">🌓 Tema</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenuto" class="container">
+      <section class="hero" id="about">
+        <h1>Nome Cognome</h1>
+        <p class="role">PhD Student — Dipartimento / Università</p>
+        <div class="tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Open Science</span>
+        </div>
+        <p class="muted">Breve bio (2–3 frasi) su interessi di ricerca, gruppo, supervisori e obiettivi. Sostituisci questo testo con qualcosa di più personale ma conciso.</p>
+        <p>
+          📄 <a href="cv.pdf" download>Scarica il CV (PDF)</a>
+          · 🎓 <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
+          · 🧪 <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+          · 💻 <a href="https://github.com/username">GitHub</a>
+          · 🔗 <a href="https://www.linkedin.com/in/username/">LinkedIn</a>
+        </p>
+      </section>
+
+      <div class="grid">
+        <section class="card" id="pubblicazioni">
+          <h2>Pubblicazioni selezionate</h2>
+          <div class="list">
+            <article class="pub">
+              <div class="title">Titolo della pubblicazione 1</div>
+              <div class="meta">Cognome, N.*, Altri (Anno). Sede: Conferenza/Rivista. <a href="#">PDF</a> · <a href="#">DOI</a> · <a href="#">arXiv</a></div>
+              <p>Una riga di contesto/risultato principale. Evidenzia il contributo con <code>grassetto</code> o parole chiave.</p>
+            </article>
+            <article class="pub">
+              <div class="title">Titolo della pubblicazione 2</div>
+              <div class="meta">Cognome, N. (Anno). <a href="#">PDF</a> · <a href="#">DOI</a></div>
+              <p>Breve descrizione della pubblicazione.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="card" id="info-rapide">
+          <h2>Info rapide</h2>
+          <ul>
+            <li>📍 Città, Paese</li>
+            <li>🏛️ Università / Dipartimento</li>
+            <li>👩‍🏫 Supervisore: Nome Cognome</li>
+            <li>✉️ <a href="mailto:nome.cognome@example.com">nome.cognome@example.com</a></li>
+            <li>🗂️ <a href="#pubblicazioni">Pubblicazioni</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <section class="card section" id="progetti">
+        <h2>Progetti</h2>
+        <div class="list">
+          <article class="pub">
+            <div class="title">Progetto A</div>
+            <div class="meta">2024–in corso · Codice: <a href="#">GitHub</a> · Demo: <a href="#">Link</a></div>
+            <p>Una riga sul problema affrontato e sull'impatto. Tecnologie: Python, PyTorch.</p>
+          </article>
+          <article class="pub">
+            <div class="title">Progetto B</div>
+            <div class="meta">2023 · Codice: <a href="#">GitHub</a></div>
+            <p>Descrizione sintetica e risultati chiave.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card section" id="insegnamento">
+        <h2>Insegnamento & Tutorati</h2>
+        <ul>
+          <li>AA 2024/25 – Corso XYZ (Tutor) – Esercitazioni su ML</li>
+          <li>AA 2023/24 – Laboratorio ABC (Co-docente)</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="contatti">
+        <h2>Contatti</h2>
+        <p>✉️ Email: <a href="mailto:nome.cognome@example.com">nome.cognome@example.com</a><br>
+           🏢 Ufficio: Edificio / Stanza<br>
+           🔗 Social: <a href="https://github.com/username">GitHub</a> · <a href="https://www.linkedin.com/in/username/">LinkedIn</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="container">
+      <p>© <span id="year"></span> Nome Cognome. Ultimo aggiornamento: <time id="lastmod" datetime=""></time>.</p>
+    </footer>
+
+    <script>
+      // Tema scuro/chiaro
+      (function() {
+        const root = document.documentElement;
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') root.classList.add('light');
+        const btn = document.getElementById('theme');
+        btn.addEventListener('click', () => {
+          root.classList.toggle('light');
+          localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+        });
+      })();
+      // Anno & last modified
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const lm = new Date(document.lastModified);
+      document.getElementById('lastmod').textContent = lm.toLocaleDateString('it-IT');
+      document.getElementById('lastmod').setAttribute('datetime', lm.toISOString());
+    </script>
+  </body>
+</html>
