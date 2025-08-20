@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>First Last – PhD | CV</title>
-    <meta name="description" content="Academic CV of First Last, PhD student. Publications, projects, teaching, contacts." />
-    <meta property="og:title" content="First Last – PhD | CV" />
+    <title>Federico Borazio - PhD Student | CV</title>
+    <meta name="description" content="Academic CV of Federico Borazio, PhD student. Publications, projects, teaching, contacts." />
+    <meta property="og:title" content="Federico Borazio – PhD Student | CV" />
     <meta property="og:description" content="Publications, projects, teaching, contacts." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://username.github.io/" />
+    <meta property="og:url" content="https://fedbor.github.io/" />
     <meta name="theme-color" content="#0ea5e9" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎓</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
     <style>
-      
       :root {
         --bg: #0b1020;
         --panel: #10172a;
@@ -36,93 +37,165 @@
         --link: #0369a1;
         --code: #a16207;
       }
+
       * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-        background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent),
-                    radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent),
-                    var(--bg);
-        color: var(--text);
-      }
+      html, body { height: 100%; margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height:1.6; background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent), radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent), var(--bg); color: var(--text); }
+      a { color: var(--link); text-decoration: none; }
+      code { color: var(--code); font-weight:700; }
+
       .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-      .skip-link { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-      .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; background: var(--panel); color: var(--text); padding: 8px 12px; border-radius: 10px; outline: 2px solid var(--brand); }
 
       header {
-        position: sticky; top: 0; z-index: 50;
+        position: sticky; top:0; z-index:50;
         backdrop-filter: blur(10px);
         background: color-mix(in oklab, var(--bg) 80%, transparent);
-        border-bottom: 1px solid color-mix(in oklab, var(--panel) 70%, transparent);
+        border-bottom:1px solid color-mix(in oklab, var(--panel) 70%, transparent);
       }
-      .nav {
-        display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 12px 24px;
-      }
-      .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
-      .brand .dot { width: 12px; height: 12px; border-radius: 999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #6366f1); box-shadow: 0 0 0 6px var(--ring); }
-      .nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+      .nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:12px 24px; }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:0.2px; }
+      .brand .dot { width:12px; height:12px; border-radius:999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #6366f1); box-shadow:0 0 0 6px var(--ring);}
+      .nav-links { display:flex; gap:14px; flex-wrap:wrap; }
+      .nav a { color: var(--muted); font-weight:600; }
       .nav a:hover { color: var(--text); }
-      .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
-      .btn {
-        border: 1px solid color-mix(in oklab, var(--brand) 40%, var(--panel));
-        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent));
-        color: var(--text); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 700;
-      }
-      .btn:hover { box-shadow: 0 0 0 6px var(--ring); }
+      .btn { border:1px solid color-mix(in oklab, var(--brand) 40%, var(--panel)); background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent)); color: var(--text); padding:8px 14px; border-radius:999px; cursor:pointer; font-weight:700;}
+      .btn:hover { box-shadow:0 0 0 6px var(--ring); }
 
-      .hero { padding: 48px 24px 10px; }
-      .hero h1 { font-size: clamp(28px, 5vw, 44px); margin: 0; }
-      .hero p.role { margin: 6px 0 12px; color: var(--muted); font-size: 18px; }
-      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-      .tag { background: var(--card); color: var(--muted); border: 1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding: 6px 10px; border-radius: 999px; }
+      .hero { display:flex; flex-wrap:wrap; gap:24px; padding:48px 24px 10px; align-items:center; }
+      .hero-text { flex:1 1 500px; }
+      .hero h1 { font-size: clamp(28px, 5vw, 44px); margin:0; }
+      .hero p.role { margin:6px 0 12px; color:var(--muted); font-size:18px; }
+      .tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+      .tag { background:var(--card); color:var(--muted); border:1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding:6px 10px; border-radius:999px; }
+      .hero img { border-radius:18px; max-width:180px; border:2px solid var(--brand); }
 
-      .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-      @media (min-width: 880px) {
-        .grid { grid-template-columns: 2fr 1fr; }
-      }
+      .grid { display:grid; gap:16px; margin-top:24px; }
+      @media (min-width:880px) { .grid { grid-template-columns: 2fr 1fr; } }
 
-      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border: 1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius: 18px; padding: 18px; }
-      .card h2 { margin: 0 0 8px; font-size: 22px; }
+      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border:1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius:18px; padding:18px; margin-bottom:20px;}
+      .card h2 { margin:0 0 8px; font-size:22px; }
       .muted { color: var(--muted); }
-      .list { display: grid; gap: 12px; }
-      .pub { display: grid; gap: 6px; padding: 12px; border: 1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius: 14px; background: color-mix(in oklab, var(--card) 80%, transparent); }
-      .pub .title { font-weight: 700; }
-      .pub .meta { font-size: 14px; color: var(--muted); }
-      .section { margin-top: 24px; }
+      .list { display:grid; gap:12px; }
+      .pub { display:grid; gap:6px; padding:12px; border:1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius:14px; background: color-mix(in oklab, var(--card) 80%, transparent); }
 
-      footer { margin: 40px 0 20px; color: var(--muted); font-size: 14px; text-align: center; }
-      a { color: var(--link); }
-      code { color: var(--code); font-weight: 700; }
+      /* News section scrollable */
+      #news { max-height:600px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--brand) var(--panel); }
+      #news::-webkit-scrollbar { width:8px; }
+      #news::-webkit-scrollbar-track { background: var(--panel); border-radius:4px; }
+      #news::-webkit-scrollbar-thumb { background: var(--brand); border-radius:4px; }
+
+      /* --- Transizioni globali su elementi interattivi --- */
+a, .btn, .card, .tag {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Card hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Tag hover */
+.tag:hover {
+  background: var(--brand);
+  color: white;
+  cursor: default;
+}
+
+/* --- Animazione reveal per sezioni --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Bottone tema interattivo --- */
+#theme {
+  transition: transform 0.3s ease;
+}
+#theme:active {
+  transform: rotate(20deg) scale(0.95);
+}
+
+/* --- Link esterni con icona animata --- */
+a[href^="http"]:hover::after {
+  content: " ↗";
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* --- Sfondo animato leggero --- */
+body {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent),
+              radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent),
+              var(--bg);
+  background-size: 200% 200%;
+  animation: bgmove 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgmove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 50% 50%; }
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.links a {
+  text-decoration: none;
+  /* color: #333; */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.links a:hover {
+  transform: translateY(-2px);
+}
+
+/* Colori hover brand */
+.links a.cv:hover {
+  color: #d32f2f; /* Rosso PDF */
+}
+.links a.scholar:hover {
+  color: #4285f4; /* Blu Google */
+}
+.links a.orcid:hover {
+  color: #a6ce39; /* Verde ORCID */
+}
+.links a.github:hover {
+  color: #171515; /* Nero GitHub */
+  color: grey;
+}
+.links a.linkedin:hover {
+  color: #0077b5; /* Blu LinkedIn */
+}
+
+.links i {
+  font-size: 1.1rem;
+}
+
+
+      footer { margin:40px 0 20px; color:var(--muted); font-size:14px; text-align:center; }
     </style>
-    
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "First Last",
-        "jobTitle": "PhD Student",
-        "url": "https://username.github.io/",
-        "email": "mailto:first.last@example.com",
-        "sameAs": [
-          "https://scholar.google.com/citations?user=XXXX",
-          "https://orcid.org/0000-0000-0000-0000",
-          "https://github.com/username",
-          "https://www.linkedin.com/in/username/"
-        ]
-      }
-    </script>
   </head>
   <body>
-    <a class="skip-link" href="#content">Skip to content</a>
-
     <header>
       <div class="container nav">
         <div class="brand">
           <span class="dot" aria-hidden="true"></span>
-          <span>First Last</span>
+          <span>Federico Borazio</span>
         </div>
         <nav class="nav-links" aria-label="Main sections">
           <a href="#about">About</a>
@@ -135,24 +208,41 @@
       </div>
     </header>
 
-    <main id="content" class="container">
+    <main class="container">
       <section class="hero" id="about">
-        <h1>First Last</h1>
-        <p class="role">PhD Student — Department / University</p>
-        <div class="tags">
-          <span class="tag">Machine Learning</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">Open Science</span>
+        <img id="hero-img" src="Borazio_picture.jpeg" alt="Federico Borazio Photo">
+        <div class="hero-text">
+          <h1>Federico Borazio</h1>
+          <p class="role">PhD Student - Department of Enterprise Engineering / University of Rome Tor Vergata</p>
+          <div class="tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">NLP</span>
+            <span class="tag">RAG for Question Answering</span>
+            <span class="tag">Evaluation of Large Language Models</span>
+            <span class="tag">Grounded Human Robot Interaction</span>
+          </div>
+          <p class="muted">Federico Borazio is a PhD candidate in the <a href="https://dii.uniroma2.it/dottorandi/">Data Science</a> program at the University of Rome Tor Vergata , where he is a member of the <a href="http://sag.art.uniroma2.it/">SAG Art research group</a>. His doctoral research is supervised by <a href="https://scholar.google.it/citations?user=U1A22fYAAAAJ&hl=it">Roberto Basili</a> and <a href="https://scholar.google.it/citations?hl=it&user=dXewdYAAAAAJ">Danilo Croce.</a> <br><br>
+            His main research interests include Large Language Models fine-tuning and adaptation for downstream and knowledge-intensive tasks, question answering in the biomedical domain, retrieval-augmented generation, and multimodal dialogue systems. He has contributed to projects on LLM benchmarking, human-robot interaction, and AI applications for epidemic intelligence, publishing in venues such as ACL, ECIR, LREC–COLING workshops, and the Italian Journal of Computational Linguistics. <br><br>
+            He is also part of the <a href="https://clic2024.ilc.cnr.it/calamita/">CALAMITA Data and Evaluation Team</a>, contributing to the benchmarking of Large Language Models on native Italian tasks. <br><br>
+            In addition to his academic work, he collaborates with <a href="http://www.revealsrl.it/it/home/">Reveal S.r.l.</a>, an industry partner focused on AI and NLP driven solutions.</p>
+          <p class="links">
+  <a class="cv" href="FedericoBorazioCV-2025_en_final.pdf" download>
+    <i class="fa-solid fa-file-pdf"></i> One Page CV
+  </a>
+  <a class="scholar" href="https://scholar.google.com/citations?user=3GISCIoAAAAJ&hl=it">
+    <i class="fa-solid fa-graduation-cap"></i> Google Scholar
+  </a>
+  <a class="orcid" href="https://orcid.org/0009-0000-0193-2131">
+    <i class="fa-solid fa-flask"></i> ORCID
+  </a>
+  <a class="github" href="https://github.com/fedbor">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+  <a class="linkedin" href="https://www.linkedin.com/in/federico-borazio-953492198/">
+    <i class="fa-brands fa-linkedin"></i> LinkedIn
+  </a>
+</p>
         </div>
-        <p class="muted">Brief bio (2–3 sentences) about research interests, group, supervisors, and goals. Replace this with something personal yet concise.</p>
-        <p>
-          📄 <a href="cv.pdf" download>Download CV (PDF)</a>
-          · 🎓 <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
-          · 🧪 <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-          · 💻 <a href="https://github.com/username">GitHub</a>
-          · 🔗 <a href="https://www.linkedin.com/in/username/">LinkedIn</a>
-        </p>
       </section>
 
       <div class="grid">
@@ -160,85 +250,191 @@
           <h2>Selected Publications</h2>
           <div class="list">
             <article class="pub">
-              <div class="title">Publication Title 1</div>
-              <div class="meta">Last, F.*, Others (Year). Venue: Conference/Journal. <a href="#">PDF</a> · <a href="#">DOI</a> · <a href="#">arXiv</a></div>
-              <p>One line of context/main result. Highlight contributions with <code>bold</code> or keywords.</p>
+              <div class="title">CALAMITA: Challenge the Abilities of LAnguage Models in ITAlian</div>
+              <div class="meta">G Attanasio, P Basile, <u>F Borazio</u>, D Croce, M Francis, J Gili, E Musacchio, M Nissim, V Patti, M Rinaldi, D Scalena (2024). <br>
+              Venue: <a href="https://clic2024.ilc.cnr.it/">Tenth Italian Conference on Computational Linguistics</a> <br>
+              <a href="https://aclanthology.org/2024.clicit-1.116.pdf">PDF</a> · <a href="https://aclanthology.org/2024.clicit-1.116/">Abstract</a> · <a href="https://calamita-ailc.github.io/calamita2024/">Repository</a></div>
             </article>
             <article class="pub">
-              <div class="title">Publication Title 2</div>
-              <div class="meta">Last, F. (Year). <a href="#">PDF</a> · <a href="#">DOI</a></div>
-              <p>Short description of the publication.</p>
+              <div class="title">Training Multi-Modal LLMs through Dialogue Planning for HRI</div>
+              <div class="meta">CD Hromei, <u>F Borazio</u>, A Sensi, E Passone, D Croce, R Basili (2025). <br>
+              Venue: <a href="https://2025.aclweb.org/">The 63rd Annual Meeting of the Association for Computational Linguistics</a> <br>
+              <a href="https://aclanthology.org/2025.findings-acl.837.pdf">PDF</a> · <a href="https://aclanthology.org/2025.findings-acl.837/">Abstract</a> · <a href="https://github.com/crux82/MM-IGLU-Dialogues">Repository</a></div>
+            </article>
+            <article class="pub">
+              <div class="title">Adapting LLMs for Domain-Specific Retrieval: A Case Study in Nuclear Safety</div>
+              <div class="meta"><u>F Borazio</u>, D Croce, R Basili (2025). <br>
+              Venue: <a href="https://ecir2025.eu/">47th EUROPEAN CONFERENCE ON INFORMATION RETRIEVAL</a> <br>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-88720-8_20">Abstract</a></div>
+            </article>
+            <article class="pub">
+              <div class="title">UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation.</div>
+              <div class="meta"><u>F Borazio</u>, A Shcherbakov, D Croce, R Basili (2025). <br>
+              Venue: <a href="https://ecir2025.eu/">16th Conference and Labs of the Evaluation Forum</a> <br>
+              <a href="#">Repository</a></div>
             </article>
           </div>
         </section>
 
-        <aside class="card" id="quick-info">
-          <h2>Quick Info</h2>
-          <ul>
-            <li>📍 City, Country</li>
-            <li>🏛️ University / Department</li>
-            <li>👩‍🏫 Supervisor: First Last</li>
-            <li>✉️ <a href="mailto:first.last@example.com">first.last@example.com</a></li>
-            <li>🗂️ <a href="#publications">Publications</a></li>
-          </ul>
-        </aside>
+        <aside class="card">
+  <h2>News & Updates</h2>
+  <div id="news">
+
+    <article class="pub">
+      <div class="title">Upcoming Presentation</div>
+      <div class="meta">September 2025</div>
+      <p>
+        Our system <strong>UniTor at BioASQ 2025</strong> – 
+        <em>Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation</em> 
+        will be presented as both a poster and oral talk at the <a href="https://www.bioasq.org/workshop13/program">BioASQ Workshop @ CLEF 2025</a>, 
+        held on September 9 at UNED University, Madrid, Spain.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">Poster Presentation</div>
+      <div class="meta">July 2025</div>
+      <p>
+        Our work <em>Training Multi-Modal LLMs through Dialogue Planning for HRI</em> 
+        will be presented as a poster at <a href="https://docs.google.com/spreadsheets/d/1O-n3HPvv8vY0L_kjyP5AtRTcWWjqLk2deCYtrMgCGw4/edit?gid=580461323#gid=580461323">ACL 2025</a> 
+        on July 28 at the Austria Center Vienna, Austria.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">New Publication</div>
+      <div class="meta">June 2025</div>
+      <p>
+        Excited to announce that our paper <em>ArTLLaMA: Adapting LLaMA to Performative Art Applications</em> 
+        has been accepted at <a href="https://digitalheritage2025.unisi.it/">Digital Heritage 2025</a>.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">New Publication</div>
+      <div class="meta">May 2025</div>
+      <p>
+        Our paper <em>UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation</em> 
+        has been accepted at the <a href="https://clef2025.clef-initiative.eu/">BioASQ Workshop Lab, CLEF 2025</a>.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">ACL 2025 Acceptance</div>
+      <div class="meta">May 2025</div>
+      <p>
+        Our work <em>Training Multi-Modal LLMs through Dialogue Planning for HRI</em> 
+        has been accepted as a <a href="https://2025.aclweb.org/program/find_papers/">Findings of ACL</a> paper.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">Conference Presentation</div>
+      <div class="meta">April 2025</div>
+      <p>
+        Presented our work <em>Adapting LLMs for Domain-Specific Retrieval: A Case Study in Nuclear Safety</em> 
+        as an oral talk in the <a href="https://ecir2025.eu/industry-day/">Industry Track at ECIR 2025</a>, held in Lucca on April 10.
+      </p>
+    </article>
+
+    <article class="pub">
+      <div class="title">Research Contribution</div>
+      <div class="meta">December 2024</div>
+      <p>
+        Joined the <a href="https://clic2024.ilc.cnr.it/organization/">CALAMITA Data and Evaluation Team</a>, 
+        contributing to the creation of a benchmark for evaluating Italian LLMs across diverse tasks.
+      </p>
+    </article>
+
+  </div>
+</aside>
+  </div>
+  <!-- Projects -->
+<section class="card" id="projects">
+  <h2>Reveal Industry Projects Collaboration</h2>
+  <div class="list">
+    
+    <article>
+  <div class="title"><u>Matchmaking for Innovation</u> - 2024/25</div>
+  <div class="meta">
+    <strong>In collaboration with</strong>: Foundation Rome Technopole<br>
+    Developed a semantic search engine to match technological and innovative challenges with academic research groups and industry projects.<br>
+    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Semantic Search, Knowledge Graphs, Word2Vec
+  </div>
+</article>
+
+<article>
+  <div class="title"><u>Simple Knowledge Organization Systems for the Decommissioning of Nuclear Facilities</u> - 2024</div>
+  <div class="meta">
+    <strong>In collaboration with</strong>: International Atomic Energy Agency (IAEA)<br>
+    Developed a semantic search engine for knowledge management in nuclear decommissioning.<br>
+    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Ontologies, Semantic Search, Knowledge Graphs, Word2Vec
+  </div>
+</article>
+
+<article>
+  <div class="title"><u>Italian Network of Epidemic Intelligence</u> - 2023/24</div>
+  <div class="meta">
+    <strong>In collaboration with</strong>: Italian Public Ministry of Health<br>
+    Developed monitoring tools for pandemic events using NLP and machine learning for automatic analysis of online information.<br>
+    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Zero-Shot Learning, Web Scraping, Word2Vec
+  </div>
+</article>
+
+
+  </div>
+</section>
+
+    <!-- Teaching -->
+    <section class="card" id="teaching">
+      <h2>Teaching Assistant</h2>
+      <div class="list">
+        <article>
+          <div class="title"><a href="http://sag.art.uniroma2.it/didattica/basili/DL_24_25/">Deep Learning</a></div>
+          <div class="meta">AY: 2024-25 and 2023-24  / Computer Engineering Master Degree</div>
+        </article>
+        <article>
+          <div class="title"><a href="https://engineering-sciences.uniroma2.it/fundamentals-of-computing-2/">Fundamental of Computing</a></div>
+          <div class="meta">AY: 2023-24  /  Engineering Sciences Bachelor Degree</div>
+        </article>
+        <article>
+          <div class="title"><a href="http://www.informatica.uniroma2.it/">Computer Programming with Laboratory</a></div>
+          <div class="meta">AY: 2022-23  /  Computer Science Bachelor Degree</div>
+        </article>
       </div>
+    </section>
 
-      <section class="card section" id="projects">
-        <h2>Projects</h2>
-        <div class="list">
-          <article class="pub">
-            <div class="title">Project A</div>
-            <div class="meta">2024–present · Code: <a href="#">GitHub</a> · Demo: <a href="#">Link</a></div>
-            <p>One line about the problem tackled and impact. Technologies: Python, PyTorch.</p>
-          </article>
-          <article class="pub">
-            <div class="title">Project B</div>
-            <div class="meta">2023 · Code: <a href="#">GitHub</a></div>
-            <p>Brief description and key results.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="card section" id="teaching">
-        <h2>Teaching & Tutorials</h2>
-        <ul>
-          <li>AY 2024/25 – Course XYZ (Tutor) – ML exercises</li>
-          <li>AY 2023/24 – Lab ABC (Co-instructor)</li>
-        </ul>
-      </section>
-
-      <section class="card section" id="contacts">
-        <h2>Contacts</h2>
-        <p>✉️ Email: <a href="mailto:first.last@example.com">first.last@example.com</a><br>
-           🏢 Office: Building / Room<br>
-           🔗 Social: <a href="https://github.com/username">GitHub</a> · <a href="https://www.linkedin.com/in/username/">LinkedIn</a>
-        </p>
-      </section>
+    <!-- Contacts -->
+    <section class="card" id="contacts">
+      <h2>Contacts</h2>
+      <ul>
+        <li>📧 Email: <a href="mailto:borazio@ing.uniroma2.it">borazio@ing.uniroma2.it</a></li>
+        <li>🏛️ Office: Via del Politecnico 1, Information Engineering Building, Block D, 2nd Floor, Room 20</li>
+      </ul>
+    </section>
     </main>
 
-    <footer class="container">
-      <p>© <span id="year"></span> First Last. Last updated: <time id="lastmod" datetime=""></time>.</p>
+    <footer>
+      <p>&copy; <span id="year"></span> Federico Borazio. Last updated: <time id="lastmod" datetime=""></time>.</p>
     </footer>
 
     <script>
-      // Theme toggle
-      (function() {
-        const root = document.documentElement;
-        const saved = localStorage.getItem('theme');
-        if (saved === 'light') root.classList.add('light');
-        const btn = document.getElementById('theme');
-        btn.addEventListener('click', () => {
-          root.classList.toggle('light');
-          localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-        });
-      })();
-      // Year & last modified
-      document.getElementById('year').textContent = new Date().getFullYear();
-      const lm = new Date(document.lastModified);
-      document.getElementById('lastmod').textContent = lm.toLocaleDateString('en-GB');
-      document.getElementById('lastmod').setAttribute('datetime', lm.toISOString());
-    </script>
+  const btnTheme = document.getElementById('theme');
+  const heroImg = document.getElementById('hero-img');
+
+  btnTheme.addEventListener('click', () => {
+    const isLight = document.documentElement.classList.toggle('light');
+    // Cambia l'immagine a seconda del tema
+    heroImg.src = isLight ? 'Borazio_picture_light.jpeg' : 'Borazio_picture.jpeg';
+  });
+
+  // Animazione reveal sulle sezioni
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
   </body>
 </html>
-
