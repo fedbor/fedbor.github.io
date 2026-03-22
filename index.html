@@ -21,7 +21,6 @@
 
     <style>
       :root {
-        /* Soft Dark Theme (Catppuccin Macchiato inspired) */
         --bg: #1e2030;
         --panel: #24273a;
         --text: #cad3f5;
@@ -33,7 +32,6 @@
         --code: #eed49f;
       }
       :root.light {
-        /* Soft Light Theme (Catppuccin Latte inspired) */
         --bg: #eff1f5;
         --panel: #e6e9ef;
         --text: #4c4f69;
@@ -107,7 +105,20 @@
       .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
       .pub.hidden { display: none; }
 
-      
+      /* News section scrollable with effect*/
+      #news, #pub-list { 
+        max-height: 600px; 
+        overflow-y: auto; 
+        scrollbar-width: thin; 
+        scrollbar-color: var(--brand) var(--panel); 
+        padding-right: 8px;
+        padding-bottom: 40px; 
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      }
+      #news::-webkit-scrollbar { width:6px; }
+      #news::-webkit-scrollbar-track { background: var(--panel); border-radius:4px; }
+      #news::-webkit-scrollbar-thumb { background: var(--brand); border-radius:4px; }
 
       /* Global Transitions */
       .card, .tag { transition: all 0.3s ease-in-out; }
@@ -115,7 +126,6 @@
       .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.15); border-color: color-mix(in oklab, var(--brand) 50%, transparent); }
       .tag:hover { background: var(--brand); color: white; cursor: default; }
 
-      /* Reveal Animation (Fixed) */
       .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
       .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -184,7 +194,8 @@
             His main research interests include Large Language Models fine-tuning and adaptation for downstream and knowledge-intensive tasks, question answering in the biomedical domain, retrieval-augmented generation, and multimodal dialogue systems. He has contributed to projects on LLM benchmarking, human-robot interaction, and AI applications for epidemic intelligence, publishing in venues such as <strong>ACL</strong> Findings, <strong>ECIR</strong>, <strong>LREC-COLING</strong>, and the <strong>Italian Journal of Computational Linguistics</strong>. <br><br>
             He is also part of the <a href="https://clic2024.ilc.cnr.it/calamita/">CALAMITA Data and Evaluation Team</a>, contributing to the benchmarking of Large Language Models on native Italian tasks. <br><br>
             In addition to his academic work, he collaborates with <a href="http://www.revealsrl.it/it/home/">Reveal S.r.l.</a>, an industry partner focused on AI and NLP driven solutions.</p>
-          
+            <p>Currently, he is an Applied Scientist Intern at Amazon in Los Angeles, working on LLM experimentation and neural retrieval for local search projects with the Alexa Local Search team supervised by <a href="https://scholar.google.com/citations?user=vYUDlsEAAAAJ&hl=en">Alessandro Moschitti</a>. </p>
+    
           <div class="links">
             <a class="cv" href="CV_short.pdf" download><i class="fa-solid fa-file-pdf"></i> Short CV</a>
             <a class="scholar" href="https://scholar.google.com/citations?user=3GISCIoAAAAJ&hl=it"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
@@ -197,7 +208,7 @@
 
       <div class="grid">
         <section class="card reveal" id="publications">
-          <h2>Selected Publications</h2>
+          <h2>Publications</h2>
           
           <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
@@ -232,12 +243,126 @@
               <div class="title"><strong>UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation.</strong></div>
               <div class="meta muted"><u>F Borazio</u>, A Shcherbakov, D Croce, R Basili (2025). <br>
               Venue: <a href="https://clef2025.clef-initiative.eu/">16th Conference and Labs of the Evaluation Forum</a> <br>
-              <a href="https://www.dei.unipd.it/~faggioli/temp/clef2025/paper_10.pdf">PDF</a> · <a href="https://github.com/crux82/BioASQ2025-UNITOR">Repository (work in progress ⏳)</a></div>
+              <a href="https://www.dei.unipd.it/~faggioli/temp/clef2025/paper_10.pdf">PDF</a> · <a href="https://github.com/crux82/BioASQ2025-UNITOR">Repository</a></div>
+            </article>
+         
+
+          <article class="pub" data-category="llm">
+              <div class="title"><strong>Challenging the Abilities of Large Language Models in Italian: a Community Initiative</strong></div>
+              <div class="meta muted">M Nissim et al. (2025). <br>
+              Venue: arXiv <br>
+              <a href="https://arxiv.org/pdf/2512.04759" target="_blank" rel="noopener noreferrer">PDF</a> · 
+              <a href="https://arxiv.org/abs/2512.04759" target="_blank" rel="noopener noreferrer">Abstract</a> · 
+              <a href="https://calamita-ailc.github.io/calamita2024/" target="_blank" rel="noopener noreferrer">Repository</a></div>
+            </article>
+
+          <article class="pub" data-category="hri">
+              <div class="title"><strong>MM-IGLU-IT: Multi-modal Interactive Grounded Language Understanding in Italian</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, CD Hromei, E Passone, D Croce, R Basili (2024). <br>
+              Venue: <a href="https://aixia2024.events.unibz.it/" target="_blank" rel="noopener noreferrer">International Conference of the Italian Association for Artificial Intelligence</a> <br>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-80607-0_6" target="_blank" rel="noopener noreferrer">Abstract</a> · 
+              <a href="https://github.com/crux82/MM-IGLU-IT" target="_blank" rel="noopener noreferrer">Repository</a></div>
+            </article>
+
+          <article class="pub" data-category="llm">
+              <div class="title"><strong>Semi-automatic topic discovery and classification for epidemic intelligence via large language models</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, D Croce, G Gambosi, R Basili, D Margiotta, A Scaiella, M Del Manso, D Petrone, A Cannone, AM Urdiales, C Sacco, P Pezzotti, F Riccardo, D Mipatrini, F Ferraro, S Pilati (2024). <br>
+              Venue: <a href="https://lrec-coling-2024.org/" target="_blank" rel="noopener noreferrer">Proceedings of the second workshop on natural language processing for political sciences @ LREC-COLING 2024</a> <br>
+              <a href="https://aclanthology.org/2024.politicalnlp-1.8.pdf" target="_blank" rel="noopener noreferrer">PDF</a> · 
+              <a href="https://aclanthology.org/2024.politicalnlp-1.8/" target="_blank" rel="noopener noreferrer">Abstract</a></div>
+            </article>
+
+          <article class="pub" data-category="llm">
+              <div class="title"><strong>ArTLLaMA: Adaptating LLaMA to Performative Art Applications</strong></div>
+              <div class="meta muted">E Passone, <u>F Borazio</u>, CD Hromei, D Croce, R Basili (2025). <br>
+              Venue: <a href="https://digitalheritage2025.unisi.it/Digital Heritage" target="_blank" rel="noopener noreferrer">Digital Heritage</a> <br>
+              <a href="https://diglib.eg.org/server/api/core/bitstreams/0b65d48e-6d1d-489f-94ee-7ffac4ab517c/content" target="_blank" rel="noopener noreferrer">PDF</a> · 
+              <a href="https://diglib.eg.org/items/848f2d25-a4c1-4429-ba8c-6d911554cd4e" target="_blank" rel="noopener noreferrer">Abstract</a></div>
+            </article>
+
+          <article class="pub" data-category="llm">
+              <div class="title"><strong>Intelligent Natural Language Processing for Epidemic Intelligence</strong></div>
+              <div class="meta muted">D Croce, <u>F Borazio</u>, et al. (2023). <br>
+              Venue: IJCoL. Italian Journal of Computational Linguistics <br>
+              <a href="https://journals.openedition.org/ijcol/1250" target="_blank" rel="noopener noreferrer">PDF</a> · 
+              <a href="https://journals.openedition.org/ijcol/1250" target="_blank" rel="noopener noreferrer">Abstract</a></div>
+            </article>
+
+          <article class="pub" data-category="llm">
+              <div class="title"><strong>UniTor at DeSegMa-It: Analyzing Supervision and Encoder Representations for Italian Machine-Generated Text Detection</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, G De Luca, D Pasquini, D Croce, R Basili (2026). <br>
+              Venue: <a href="https://www.evalita.it/campaigns/evalita-2026/tasks/9th Evaluation Campaign of Natural Language Processing and Speech Tools for Italian" target="_blank" rel="noopener noreferrer">9th Evaluation Campaign of Natural Language Processing and Speech Tools for Italian</a> <br>
+              <a href="https://apa.dipsco.unitn.it/evalita2026/44.pdf" target="_blank" rel="noopener noreferrer">PDF</a></div>
+            </article>
+
+            <article class="pub" data-category="rag">
+              <div class="title"><strong>UniTor at PFB: Constrained Agentic Prompting and Self-Consistency for Financial Multi-Choice QA</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, SA Mousavian Anaraki, SI Rai, D Croce, R Basili (2026). <br>
+              Venue: <a href="https://www.evalita.it/campaigns/evalita-2026/tasks/9th Evaluation Campaign of Natural Language Processing and Speech Tools for Italian" target="_blank" rel="noopener noreferrer"></a>9th Evaluation Campaign of Natural Language Processing and Speech Tools for Italian</a> <br>
+              <a href="https://apa.dipsco.unitn.it/evalita2026/18.pdf" target="_blank" rel="noopener noreferrer">PDF</a></div>
             </article>
           </div>
         </section>
 
-        
+        <aside class="card reveal">
+          <h2>News & Updates</h2>
+
+          
+
+          <div id="news">
+
+            <article class="pub">
+              <div class="title"><strong>Article Presentation</strong></div>
+              <div class="meta muted">March 2026</div>
+              <p>Our work <strong>AI and IR Paradigms for Sustainable and Trustworthy Accurate Access to Large Scale Biomedical Information</strong>  will be presented at <a href="https://ecir2026.eu/programme/program-schedule">ECIR 2026</a>, on March 31, in Delft, Netherlands.</p>
+            </article>
+
+          <article class="pub">
+              <div class="title"><strong>New Internship at Amazon</strong></div>
+              <div class="meta muted">March 2026</div>
+              <p>
+                Excited to announce that I have joined <strong>Amazon</strong> in Los Angeles as an Applied Scientist Intern! 
+              </p>
+            </article>
+
+            <article class="pub">
+              <div class="title"><strong>Award</strong></div>
+              <div class="meta muted">February 2026</div>
+              <p>Our work <strong>UniTor at DeSegMA</strong> was awarded an <strong>Honorable Mention</strong> at <a href="https://www.evalita.it/campaigns/evalita-2026/best-system-award-2026/" target="_blank" rel="noopener noreferrer">EVALITA 2026</a>, held in Bari, Italy.</p>
+            </article>
+
+            <article class="pub">
+              <div class="title"><strong>Article Presentation</strong></div>
+              <div class="meta muted">February 2026</div>
+              <p>Our work <strong>UniTor at PFB</strong> will be presented at <a href="https://www.evalita.it/campaigns/evalita-2026/workshop-program/">EVALITA 2026</a>, in Bari, Italy.</p>
+            </article>
+
+            <article class="pub">
+              <div class="title"><strong>New Publication</strong></div>
+              <div class="meta muted">December 2025</div>
+              <p>New paper <strong>AI and IR Paradigms for Sustainable and Trustworthy Accurate Access to Large Scale Biomedical Information</strong> accepted at <a href="https://ecir2026.eu/programme/accepted-papers">ECIR 2026 IR for GOOD</a> 🎉.</p>
+            </article>
+
+            <article class="pub">
+              <div class="title"><strong>Article Presentation</strong></div>
+              <div class="meta muted">November 2025</div>
+              <p>Our work <strong>RAGArTLLaMA</strong> will be presented as a talk at <a href="https://www-2025.second-congress.hyperstage.it/programme">Hyperstage</a> in Rome, Italy.</p>
+            </article>
+
+            <article class="pub">
+              <div class="title"><strong>Upcoming Presentation</strong></div>
+              <div class="meta muted">September 2025</div>
+              <p>Our system <strong>UniTor at BioASQ 2025</strong> will be presented as a poster and oral talk at the <a href="https://www.bioasq.org/workshop13/program">BioASQ Workshop @ CLEF 2025</a> in Madrid, Spain.</p>
+            </article>
+            
+            <article class="pub">
+              <div class="title"><strong>Poster Presentation</strong></div>
+              <div class="meta muted">July 2025</div>
+              <p>Our work on <em>Training Multi-Modal LLMs for HRI</em> will be presented at <a href="https://docs.google.com/spreadsheets/d/1O-n3HPvv8vY0L_kjyP5AtRTcWWjqLk2deCYtrMgCGw4/edit?gid=580461323#gid=580461323">ACL 2025</a> in Vienna, Austria.</p>
+            </article>
+          </div>
+        </aside>
+      </div>
 
       <section class="card reveal" id="projects">
         <h2>Reveal Industry Projects Collaboration</h2>
@@ -305,7 +430,6 @@
     </footer>
 
     <script>
-      // 1. Gestione Tema
       const btnTheme = document.getElementById('theme');
       const heroImg = document.getElementById('hero-img');
 
@@ -314,25 +438,22 @@
         heroImg.src = isLight ? 'Borazio_picture_light.jpeg' : 'Borazio_picture.jpeg';
       });
 
-      // 2. Animazione Reveal sulle sezioni (Ora funzionante!)
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Ferma l'osservazione una volta apparso
+            observer.unobserve(entry.target); 
           }
         });
       }, { threshold: 0.1 });
       
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // 3. Filtri Pubblicazioni
       const filterBtns = document.querySelectorAll('.filter-btn');
       const publications = document.querySelectorAll('#pub-list .pub');
 
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Rimuovi classe active dagli altri bottoni
           filterBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
 
@@ -348,27 +469,7 @@
         });
       });
 
-      // 4. Anno Dinamico nel Footer
       document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-
-    // 5. Gestione News (Mostra/Nascondi)
-const extraNews = document.querySelectorAll('.extra-news');
-const toggleNewsBtn = document.getElementById('toggle-news');
-let isNewsExpanded = false;
-
-// Nascondi le extra news all'avvio
-extraNews.forEach(news => news.style.display = 'none');
-
-toggleNewsBtn.addEventListener('click', () => {
-  isNewsExpanded = !isNewsExpanded;
-  
-  extraNews.forEach(news => {
-    // Usiamo 'grid' perché le card .pub hanno display: grid
-    news.style.display = isNewsExpanded ? 'grid' : 'none'; 
-  });
-  
-  toggleNewsBtn.textContent = isNewsExpanded ? 'Show less ∧' : 'Show all news ∨';
-});
   </body>
 </html>
