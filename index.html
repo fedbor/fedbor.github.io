@@ -107,11 +107,7 @@
       .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
       .pub.hidden { display: none; }
 
-      /* News section scrollable */
-      #news { max-height:600px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--brand) var(--panel); padding-right: 8px;}
-      #news::-webkit-scrollbar { width:6px; }
-      #news::-webkit-scrollbar-track { background: var(--panel); border-radius:4px; }
-      #news::-webkit-scrollbar-thumb { background: var(--brand); border-radius:4px; }
+      
 
       /* Global Transitions */
       .card, .tag { transition: all 0.3s ease-in-out; }
@@ -241,47 +237,7 @@
           </div>
         </section>
 
-        <aside class="card reveal">
-          <h2>News & Updates</h2>
-          <div id="news">
-            <article class="pub">
-              <div class="title"><strong>Award</strong></div>
-              <div class="meta muted">February 2026</div>
-              <p>Our work <strong>UniTor at DeSegMA</strong> was awarded an <strong>Honorable Mention</strong> at <a href="https://www.evalita.it/campaigns/evalita-2026/best-system-award-2026/" target="_blank" rel="noopener noreferrer">EVALITA 2026</a>, held in Bari, Italy.</p>
-            </article>
-
-            <article class="pub">
-              <div class="title"><strong>Article Presentation</strong></div>
-              <div class="meta muted">February 2026</div>
-              <p>Our work <strong>UniTor at PFB</strong> will be presented at <a href="https://www.evalita.it/campaigns/evalita-2026/workshop-program/">EVALITA 2026</a>, in Bari, Italy.</p>
-            </article>
-
-            <article class="pub">
-              <div class="title"><strong>New Publication</strong></div>
-              <div class="meta muted">December 2025</div>
-              <p>New paper integrating AI and IR paradigms accepted at <a href="https://ecir2026.eu/programme/accepted-papers">ECIR 2026 IR for GOOD</a> 🎉.</p>
-            </article>
-
-            <article class="pub">
-              <div class="title"><strong>Article Presentation</strong></div>
-              <div class="meta muted">November 2025</div>
-              <p>Our work <strong>RAGArTLLaMA</strong> will be presented as a talk at <a href="https://www-2025.second-congress.hyperstage.it/programme">Hyperstage</a> in Rome, Italy.</p>
-            </article>
-
-            <article class="pub">
-              <div class="title"><strong>Upcoming Presentation</strong></div>
-              <div class="meta muted">September 2025</div>
-              <p>Our system <strong>UniTor at BioASQ 2025</strong> will be presented as a poster and oral talk at the <a href="https://www.bioasq.org/workshop13/program">BioASQ Workshop @ CLEF 2025</a> in Madrid, Spain.</p>
-            </article>
-            
-            <article class="pub">
-              <div class="title"><strong>Poster Presentation</strong></div>
-              <div class="meta muted">July 2025</div>
-              <p>Our work on <em>Training Multi-Modal LLMs for HRI</em> will be presented at <a href="https://docs.google.com/spreadsheets/d/1O-n3HPvv8vY0L_kjyP5AtRTcWWjqLk2deCYtrMgCGw4/edit?gid=580461323#gid=580461323">ACL 2025</a> in Vienna, Austria.</p>
-            </article>
-          </div>
-        </aside>
-      </div>
+        
 
       <section class="card reveal" id="projects">
         <h2>Reveal Industry Projects Collaboration</h2>
@@ -395,5 +351,24 @@
       // 4. Anno Dinamico nel Footer
       document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+
+    // 5. Gestione News (Mostra/Nascondi)
+const extraNews = document.querySelectorAll('.extra-news');
+const toggleNewsBtn = document.getElementById('toggle-news');
+let isNewsExpanded = false;
+
+// Nascondi le extra news all'avvio
+extraNews.forEach(news => news.style.display = 'none');
+
+toggleNewsBtn.addEventListener('click', () => {
+  isNewsExpanded = !isNewsExpanded;
+  
+  extraNews.forEach(news => {
+    // Usiamo 'grid' perché le card .pub hanno display: grid
+    news.style.display = isNewsExpanded ? 'grid' : 'none'; 
+  });
+  
+  toggleNewsBtn.textContent = isNewsExpanded ? 'Show less ∧' : 'Show all news ∨';
+});
   </body>
 </html>
