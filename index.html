@@ -10,185 +10,148 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fedbor.github.io/" />
     <meta name="google-site-verification" content="TRWw7IhpW5CLk-nlEwLVazXE9dBIuEzNo6KXYT_6yG8" />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="theme-color" content="#89b4fa" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎓</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 
     <style>
       :root {
-        --bg: #0b1020;
-        --panel: #10172a;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --brand: #0ea5e9;
-        --ring: rgba(14,165,233,0.35);
-        --card: #0f172a;
-        --link: #38bdf8;
-        --code: #eab308;
+        /* Soft Dark Theme (Catppuccin Macchiato inspired) */
+        --bg: #1e2030;
+        --panel: #24273a;
+        --text: #cad3f5;
+        --muted: #a5adcb;
+        --brand: #8aadf4;
+        --ring: rgba(138, 173, 244, 0.35);
+        --card: #363a4f;
+        --link: #8bd5ca;
+        --code: #eed49f;
       }
       :root.light {
-        --bg: #f8fafc;
-        --panel: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --brand: #0284c7;
-        --ring: rgba(2,132,199,0.25);
-        --card: #f1f5f9;
-        --link: #0369a1;
-        --code: #a16207;
+        /* Soft Light Theme (Catppuccin Latte inspired) */
+        --bg: #eff1f5;
+        --panel: #e6e9ef;
+        --text: #4c4f69;
+        --muted: #6c6f85;
+        --brand: #1e66f5;
+        --ring: rgba(30, 102, 245, 0.25);
+        --card: #ccd0da;
+        --link: #04a5e5;
+        --code: #df8e1d;
       }
 
       * { box-sizing: border-box; }
-      html, body { height: 100%; margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height:1.6; background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent), radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent), var(--bg); color: var(--text); }
-      a { color: var(--link); text-decoration: none; }
+      html, body { 
+        height: 100%; margin:0; 
+        font-family: 'Inter', system-ui, sans-serif; 
+        line-height:1.6; 
+        background: radial-gradient(1200px 600px at 10% -10%, rgba(138, 173, 244, 0.12), transparent), 
+                    radial-gradient(1000px 500px at 90% 0%, rgba(198, 160, 246, 0.12), transparent), 
+                    var(--bg); 
+        color: var(--text); 
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      h1, h2, h3, .brand { font-family: 'Merriweather', serif; }
+      a { color: var(--link); text-decoration: none; transition: color 0.2s; }
       code { color: var(--code); font-weight:700; }
 
       .container { max-width: 980px; margin: 0 auto; padding: 24px; }
 
       header {
         position: sticky; top:0; z-index:50;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         background: color-mix(in oklab, var(--bg) 80%, transparent);
-        border-bottom:1px solid color-mix(in oklab, var(--panel) 70%, transparent);
+        border-bottom: 1px solid color-mix(in oklab, var(--panel) 70%, transparent);
       }
       .nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:12px 24px; }
-      .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:0.2px; }
-      .brand .dot { width:12px; height:12px; border-radius:999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #6366f1); box-shadow:0 0 0 6px var(--ring);}
-      .nav-links { display:flex; gap:14px; flex-wrap:wrap; }
-      .nav a { color: var(--muted); font-weight:600; }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:0.2px; font-size: 1.1rem; }
+      .brand .dot { width:12px; height:12px; border-radius:999px; background: conic-gradient(from 180deg at 50% 50%, var(--brand), #c6a0f6); box-shadow:0 0 0 6px var(--ring);}
+      .nav-links { display:flex; gap:16px; flex-wrap:wrap; align-items: center;}
+      .nav a { color: var(--muted); font-weight:500; font-size: 0.95rem; }
       .nav a:hover { color: var(--text); }
-      .btn { border:1px solid color-mix(in oklab, var(--brand) 40%, var(--panel)); background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent)); color: var(--text); padding:8px 14px; border-radius:999px; cursor:pointer; font-weight:700;}
+      .btn { border:1px solid color-mix(in oklab, var(--brand) 40%, var(--panel)); background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 30%, transparent), color-mix(in oklab, var(--panel) 70%, transparent)); color: var(--text); padding:8px 14px; border-radius:999px; cursor:pointer; font-weight:600; font-family: 'Inter', sans-serif;}
       .btn:hover { box-shadow:0 0 0 6px var(--ring); }
 
-      .hero { display:flex; flex-wrap:wrap; gap:24px; padding:48px 24px 10px; align-items:center; }
+      .hero { display:flex; flex-wrap:wrap; gap:32px; padding:48px 24px 10px; align-items:center; }
       .hero-text { flex:1 1 500px; }
-      .hero h1 { font-size: clamp(28px, 5vw, 44px); margin:0; }
-      .hero p.role { margin:6px 0 12px; color:var(--muted); font-size:18px; }
-      .tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-      .tag { background:var(--card); color:var(--muted); border:1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding:6px 10px; border-radius:999px; }
-      .hero img { border-radius:18px; max-width:180px; border:2px solid var(--brand); }
+      .hero h1 { font-size: clamp(32px, 5vw, 48px); margin:0; line-height: 1.2; }
+      .hero p.role { margin:8px 0 16px; color:var(--muted); font-size:18px; font-weight: 500; }
+      .tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+      .tag { background:var(--card); color:var(--muted); border:1px solid color-mix(in oklab, var(--brand) 20%, var(--card)); padding:6px 12px; border-radius:999px; font-size: 0.85rem; font-weight: 500;}
+      .hero img { border-radius:24px; max-width:200px; border:3px solid var(--brand); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s ease;}
+      .hero img:hover { transform: scale(1.02) rotate(1deg); }
 
-      .grid { display:grid; gap:16px; margin-top:24px; }
+      .grid { display:grid; gap:24px; margin-top:32px; }
       @media (min-width:880px) { .grid { grid-template-columns: 2fr 1fr; } }
 
-      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border:1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius:18px; padding:18px; margin-bottom:20px;}
-      .card h2 { margin:0 0 8px; font-size:22px; }
+      .card { background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 65%, transparent), color-mix(in oklab, var(--panel) 85%, transparent)); border:1px solid color-mix(in oklab, var(--panel) 40%, var(--brand)); border-radius:20px; padding:24px; margin-bottom:24px;}
+      .card h2 { margin:0 0 16px; font-size:24px; border-bottom: 2px solid var(--panel); padding-bottom: 8px; display: inline-block; }
       .muted { color: var(--muted); }
-      .list { display:grid; gap:12px; }
-      .pub { display:grid; gap:6px; padding:12px; border:1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius:14px; background: color-mix(in oklab, var(--card) 80%, transparent); }
+      .list { display:grid; gap:16px; }
+      .pub { display:grid; gap:8px; padding:16px; border:1px dashed color-mix(in oklab, var(--brand) 30%, var(--panel)); border-radius:14px; background: color-mix(in oklab, var(--card) 60%, transparent); transition: all 0.3s ease;}
+
+      /* Generics and Text */
+      p { margin-top: 0; }
+
+      /* Filters for Publications */
+      .filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+      .filter-btn { background: transparent; color: var(--muted); border: 1px solid var(--muted); padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
+      .filter-btn:hover { border-color: var(--brand); color: var(--text); }
+      .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+      .pub.hidden { display: none; }
 
       /* News section scrollable */
-      #news { max-height:600px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--brand) var(--panel); }
-      #news::-webkit-scrollbar { width:8px; }
+      #news { max-height:600px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--brand) var(--panel); padding-right: 8px;}
+      #news::-webkit-scrollbar { width:6px; }
       #news::-webkit-scrollbar-track { background: var(--panel); border-radius:4px; }
       #news::-webkit-scrollbar-thumb { background: var(--brand); border-radius:4px; }
 
-      /* --- Transizioni globali su elementi interattivi --- */
-a, .btn, .card, .tag {
-  transition: all 0.25s ease-in-out;
-}
+      /* Global Transitions */
+      .card, .tag { transition: all 0.3s ease-in-out; }
+      
+      .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.15); border-color: color-mix(in oklab, var(--brand) 50%, transparent); }
+      .tag:hover { background: var(--brand); color: white; cursor: default; }
 
-/* Card hover */
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
+      /* Reveal Animation (Fixed) */
+      .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Tag hover */
-.tag:hover {
-  background: var(--brand);
-  color: white;
-  cursor: default;
-}
+      /* Theme Button */
+      #theme { transition: transform 0.3s ease; }
+      #theme:active { transform: rotate(20deg) scale(0.95); }
 
-/* --- Animazione reveal per sezioni --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+      /* External links animated icon */
+      a[href^="http"]:hover::after { content: " ↗"; opacity: 0.8; transition: opacity 0.3s ease; }
 
-/* --- Bottone tema interattivo --- */
-#theme {
-  transition: transform 0.3s ease;
-}
-#theme:active {
-  transform: rotate(20deg) scale(0.95);
-}
+      /* Background Animation */
+      body {
+        background-size: 200% 200%;
+        animation: bgmove 20s ease-in-out infinite alternate;
+      }
+      @keyframes bgmove {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 50% 50%; }
+      }
 
-/* --- Link esterni con icona animata --- */
-a[href^="http"]:hover::after {
-  content: " ↗";
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
+      /* Links (Socials/CV) */
+      .links { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: 1rem; margin-top: 20px;}
+      .links a { font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease, transform 0.3s ease; color: var(--text); }
+      .links a:hover { transform: translateY(-3px); }
+      .links a.cv:hover { color: #d32f2f; }
+      .links a.scholar:hover { color: #4285f4; }
+      .links a.orcid:hover { color: #a6ce39; }
+      .links a.github:hover { color: #8e8e8e; }
+      .links a.linkedin:hover { color: #0077b5; }
+      .links i { font-size: 1.2rem; }
 
-/* --- Sfondo animato leggero --- */
-body {
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.12), transparent),
-              radial-gradient(1000px 500px at 90% 0%, rgba(99,102,241,0.12), transparent),
-              var(--bg);
-  background-size: 200% 200%;
-  animation: bgmove 20s ease-in-out infinite alternate;
-}
-
-@keyframes bgmove {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 50% 50%; }
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 1rem;
-}
-
-.links a {
-  text-decoration: none;
-  /* color: #333; */
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-
-
-.links a:hover {
-  transform: translateY(-2px);
-}
-
-/* Colori hover brand */
-.links a.cv:hover {
-  color: #d32f2f; /* Rosso PDF */
-}
-.links a.scholar:hover {
-  color: #4285f4; /* Blu Google */
-}
-.links a.orcid:hover {
-  color: #a6ce39; /* Verde ORCID */
-}
-.links a.github:hover {
-  color: #171515; /* Nero GitHub */
-  color: grey;
-}
-.links a.linkedin:hover {
-  color: #0077b5; /* Blu LinkedIn */
-}
-
-.links i {
-  font-size: 1.1rem;
-}
-
-
-      footer { margin:40px 0 20px; color:var(--muted); font-size:14px; text-align:center; }
+      footer { margin:60px 0 30px; color:var(--muted); font-size:14px; text-align:center; }
     </style>
   </head>
   <body>
@@ -203,14 +166,13 @@ body {
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#teaching">Teaching</a>
-          <a href="#contacts">Contacts</a>
           <button id="theme" class="btn" type="button" aria-label="Change theme">🌓 Theme</button>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <section class="hero" id="about">
+      <section class="hero reveal" id="about">
         <img id="hero-img" src="Borazio_picture.jpeg" alt="Federico Borazio Photo">
         <div class="hero-text">
           <h1>Federico Borazio</h1>
@@ -218,284 +180,220 @@ body {
           <div class="tags">
             <span class="tag">Machine Learning</span>
             <span class="tag">NLP</span>
-            <span class="tag">RAG for Question Answering</span>
-            <span class="tag">Evaluation of Large Language Models</span>
-            <span class="tag">Grounded Human Robot Interaction</span>
+            <span class="tag">RAG for QA</span>
+            <span class="tag">LLM Evaluation</span>
+            <span class="tag">HRI</span>
           </div>
           <p class="muted">Federico Borazio is a PhD candidate in the <a href="https://dii.uniroma2.it/dottorandi/">Data Science</a> program at the University of Rome Tor Vergata , where he is a member of the <a href="http://sag.art.uniroma2.it/">SAG Art research group</a>. His doctoral research is supervised by <a href="https://scholar.google.it/citations?user=U1A22fYAAAAJ&hl=it">Roberto Basili</a> and <a href="https://scholar.google.it/citations?hl=it&user=dXewdYAAAAAJ">Danilo Croce.</a> <br><br>
-            His main research interests include Large Language Models fine-tuning and adaptation for downstream and knowledge-intensive tasks, question answering in the biomedical domain, retrieval-augmented generation, and multimodal dialogue systems. He has contributed to projects on LLM benchmarking, human-robot interaction, and AI applications for epidemic intelligence, publishing in venues such as <strong>ACL</strong> Findings, <strong>ECIR</strong>, <strong>LREC-COLING</strong> Political NLP workshop, and the <strong>Italian Journal of Computational Linguistics</strong>. <br><br>
+            His main research interests include Large Language Models fine-tuning and adaptation for downstream and knowledge-intensive tasks, question answering in the biomedical domain, retrieval-augmented generation, and multimodal dialogue systems. He has contributed to projects on LLM benchmarking, human-robot interaction, and AI applications for epidemic intelligence, publishing in venues such as <strong>ACL</strong> Findings, <strong>ECIR</strong>, <strong>LREC-COLING</strong>, and the <strong>Italian Journal of Computational Linguistics</strong>. <br><br>
             He is also part of the <a href="https://clic2024.ilc.cnr.it/calamita/">CALAMITA Data and Evaluation Team</a>, contributing to the benchmarking of Large Language Models on native Italian tasks. <br><br>
             In addition to his academic work, he collaborates with <a href="http://www.revealsrl.it/it/home/">Reveal S.r.l.</a>, an industry partner focused on AI and NLP driven solutions.</p>
-          <p class="links">
-  <a class="cv" href="CV_short.pdf" download>
-    <i class="fa-solid fa-file-pdf"></i> Short CV
-  </a>
-  <a class="scholar" href="https://scholar.google.com/citations?user=3GISCIoAAAAJ&hl=it">
-    <i class="fa-solid fa-graduation-cap"></i> Google Scholar
-  </a>
-  <a class="orcid" href="https://orcid.org/0009-0000-0193-2131">
-    <i class="fa-solid fa-flask"></i> ORCID
-  </a>
-  <a class="github" href="https://github.com/fedbor">
-    <i class="fa-brands fa-github"></i> GitHub
-  </a>
-  <a class="linkedin" href="https://www.linkedin.com/in/federico-borazio-953492198/">
-    <i class="fa-brands fa-linkedin"></i> LinkedIn
-  </a>
-</p>
+          
+          <div class="links">
+            <a class="cv" href="CV_short.pdf" download><i class="fa-solid fa-file-pdf"></i> Short CV</a>
+            <a class="scholar" href="https://scholar.google.com/citations?user=3GISCIoAAAAJ&hl=it"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+            <a class="orcid" href="https://orcid.org/0009-0000-0193-2131"><i class="fa-brands fa-orcid"></i> ORCID</a>
+            <a class="github" href="https://github.com/fedbor"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a class="linkedin" href="https://www.linkedin.com/in/federico-borazio-953492198/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
         </div>
       </section>
 
       <div class="grid">
-        <section class="card" id="publications">
+        <section class="card reveal" id="publications">
           <h2>Selected Publications</h2>
-          <div class="list">
-            <article class="pub">
-              <div class="title">CALAMITA: Challenge the Abilities of LAnguage Models in ITAlian</div>
-              <div class="meta">G Attanasio, P Basile, <u>F Borazio</u>, D Croce, M Francis, J Gili, E Musacchio, M Nissim, V Patti, M Rinaldi, D Scalena (2024). <br>
+          
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="llm">LLMs / Eval</button>
+            <button class="filter-btn" data-filter="rag">RAG / QA</button>
+            <button class="filter-btn" data-filter="hri">HRI</button>
+          </div>
+
+          <div class="list" id="pub-list">
+            <article class="pub" data-category="llm">
+              <div class="title"><strong>CALAMITA: Challenge the Abilities of LAnguage Models in ITAlian</strong></div>
+              <div class="meta muted">G Attanasio, P Basile, <u>F Borazio</u>, D Croce, M Francis, J Gili, E Musacchio, M Nissim, V Patti, M Rinaldi, D Scalena (2024). <br>
               Venue: <a href="https://clic2024.ilc.cnr.it/">Tenth Italian Conference on Computational Linguistics</a> <br>
               <a href="https://aclanthology.org/2024.clicit-1.116.pdf">PDF</a> · <a href="https://aclanthology.org/2024.clicit-1.116/">Abstract</a> · <a href="https://calamita-ailc.github.io/calamita2024/">Repository</a></div>
             </article>
-            <article class="pub">
-              <div class="title">Training Multi-Modal LLMs through Dialogue Planning for HRI</div>
-              <div class="meta">CD Hromei, <u>F Borazio</u>, A Sensi, E Passone, D Croce, R Basili (2025). <br>
+
+            <article class="pub" data-category="hri">
+              <div class="title"><strong>Training Multi-Modal LLMs through Dialogue Planning for HRI</strong></div>
+              <div class="meta muted">CD Hromei, <u>F Borazio</u>, A Sensi, E Passone, D Croce, R Basili (2025). <br>
               Venue: <a href="https://2025.aclweb.org/">The 63rd Annual Meeting of the Association for Computational Linguistics</a> <br>
               <a href="https://aclanthology.org/2025.findings-acl.837.pdf">PDF</a> · <a href="https://aclanthology.org/2025.findings-acl.837/">Abstract</a> · <a href="https://github.com/crux82/MM-IGLU-Dialogues">Repository</a></div>
             </article>
-            <article class="pub">
-              <div class="title">Adapting LLMs for Domain-Specific Retrieval: A Case Study in Nuclear Safety</div>
-              <div class="meta"><u>F Borazio</u>, D Croce, R Basili (2025). <br>
+
+            <article class="pub" data-category="rag">
+              <div class="title"><strong>Adapting LLMs for Domain-Specific Retrieval: A Case Study in Nuclear Safety</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, D Croce, R Basili (2025). <br>
               Venue: <a href="https://ecir2025.eu/">47th EUROPEAN CONFERENCE ON INFORMATION RETRIEVAL</a> <br>
               <a href="https://link.springer.com/chapter/10.1007/978-3-031-88720-8_20">Abstract</a></div>
             </article>
-            <article class="pub">
-              <div class="title">UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation.</div>
-              <div class="meta"><u>F Borazio</u>, A Shcherbakov, D Croce, R Basili (2025). <br>
+
+            <article class="pub" data-category="rag">
+              <div class="title"><strong>UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation.</strong></div>
+              <div class="meta muted"><u>F Borazio</u>, A Shcherbakov, D Croce, R Basili (2025). <br>
               Venue: <a href="https://clef2025.clef-initiative.eu/">16th Conference and Labs of the Evaluation Forum</a> <br>
-              <a href="https://www.dei.unipd.it/~faggioli/temp/clef2025/paper_10.pdf">PDF</a> · <a href="https://github.com/crux82/BioASQ2025-UNITOR">Repository(work in progress ⏳)</a></div>
+              <a href="https://www.dei.unipd.it/~faggioli/temp/clef2025/paper_10.pdf">PDF</a> · <a href="https://github.com/crux82/BioASQ2025-UNITOR">Repository (work in progress ⏳)</a></div>
             </article>
           </div>
         </section>
 
-        <aside class="card">
-  <h2>News & Updates</h2>
-  <div id="news">
+        <aside class="card reveal">
+          <h2>News & Updates</h2>
+          <div id="news">
+            <article class="pub">
+              <div class="title"><strong>Award</strong></div>
+              <div class="meta muted">February 2026</div>
+              <p>Our work <strong>UniTor at DeSegMA</strong> was awarded an <strong>Honorable Mention</strong> at <a href="https://www.evalita.it/campaigns/evalita-2026/best-system-award-2026/" target="_blank" rel="noopener noreferrer">EVALITA 2026</a>, held in Bari, Italy.</p>
+            </article>
 
-    <article class="pub">
-  <div class="title">Award</div>
-  <div class="meta">February 2026</div>
-  <p>
-    Our work <strong>UniTor at DeSegMA</strong> – 
-    <em>Analyzing Supervision and Encoder Representations for Italian Machine-Generated Text Detection</em> 
-    was awarded an <strong>Honorable Mention</strong> at 
-    <a href="https://www.evalita.it/campaigns/evalita-2026/best-system-award-2026/" target="_blank" rel="noopener noreferrer">
-      EVALITA 2026 - Evaluation of NLP and Speech Tools for Italian
-    </a>, held on February 27 at Università degli Studi di Bari Aldo Moro, Bari, Italy.
-  </p>
-</article>
+            <article class="pub">
+              <div class="title"><strong>Article Presentation</strong></div>
+              <div class="meta muted">February 2026</div>
+              <p>Our work <strong>UniTor at PFB</strong> will be presented at <a href="https://www.evalita.it/campaigns/evalita-2026/workshop-program/">EVALITA 2026</a>, in Bari, Italy.</p>
+            </article>
 
-    <article class="pub">
-      <div class="title">Article Presentation</div>
-      <div class="meta">February 2026</div>
-      <p>
-        Our work <strong>UniTor at PFB</strong> – 
-        <em>Constrained Agentic Prompting and Self-Consistency for Financial Multi-Choice QA</em> 
-        will be presented at the <a href="https://www.evalita.it/campaigns/evalita-2026/workshop-program/">EVALITA 2026 - Evaluation of NLP and Speech Tools for Italian</a>, 
-        held on February 27 at Università degli Studi di Bari Aldo Moro, Bari, Italy.
-      </p>
-    </article>
+            <article class="pub">
+              <div class="title"><strong>New Publication</strong></div>
+              <div class="meta muted">December 2025</div>
+              <p>New paper integrating AI and IR paradigms accepted at <a href="https://ecir2026.eu/programme/accepted-papers">ECIR 2026 IR for GOOD</a> 🎉.</p>
+            </article>
 
-    <article class="pub">
-      <div class="title">New Publication</div>
-      <div class="meta">December 2025</div>
-      <p>
-        New paper: <em>Integrating AI and IR paradigms for sustainable and trustworthy accurate access to large scale Biomedical information</em>
-        has been accepted at <a href="https://ecir2026.eu/programme/accepted-papers">ECIR 2026 IR for GOOD</a> 🎉.
-      </p>
-    </article>
+            <article class="pub">
+              <div class="title"><strong>Article Presentation</strong></div>
+              <div class="meta muted">November 2025</div>
+              <p>Our work <strong>RAGArTLLaMA</strong> will be presented as a talk at <a href="https://www-2025.second-congress.hyperstage.it/programme">Hyperstage</a> in Rome, Italy.</p>
+            </article>
 
-    <article class="pub">
-      <div class="title">Article Presentation</div>
-      <div class="meta">November 2025</div>
-      <p>
-        Our work <strong>RAGArTLLaMA</strong> – 
-        <em>Retrieval-Augmented Schema Conditioning for Text-to-SQL in the Performing Arts Domain</em> 
-        will be presented as a talk at the <a href="https://www-2025.second-congress.hyperstage.it/programme">Hyperstage - Global Congress on Digital Innovation in the Visual and Performing Arts</a>, 
-        held on November 26 at Villa Giulia National Etruscan Museum, Rome, Italy.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">Upcoming Presentation</div>
-      <div class="meta">September 2025</div>
-      <p>
-        Our system <strong>UniTor at BioASQ 2025</strong> – 
-        <em>Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation</em> 
-        will be presented as both a poster and oral talk at the <a href="https://www.bioasq.org/workshop13/program">BioASQ Workshop @ CLEF 2025</a>, 
-        held on September 9 at UNED University, Madrid, Spain.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">Poster Presentation</div>
-      <div class="meta">July 2025</div>
-      <p>
-        Our work <em>Training Multi-Modal LLMs through Dialogue Planning for HRI</em> 
-        will be presented as a poster at <a href="https://docs.google.com/spreadsheets/d/1O-n3HPvv8vY0L_kjyP5AtRTcWWjqLk2deCYtrMgCGw4/edit?gid=580461323#gid=580461323">ACL 2025</a> 
-        on July 28 at the Austria Center Vienna, Austria.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">New Publication</div>
-      <div class="meta">June 2025</div>
-      <p>
-        Excited to announce that our paper <em>ArTLLaMA: Adapting LLaMA to Performative Art Applications</em> 
-        has been accepted at <a href="https://digitalheritage2025.unisi.it/">Digital Heritage 2025</a>.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">New Publication</div>
-      <div class="meta">May 2025</div>
-      <p>
-        Our paper <em>UniTor at BioASQ 2025: Modular Biomedical QA with Synthetic Snippets and Multiple Task Answer Generation</em> 
-        has been accepted at the <a href="https://clef2025.clef-initiative.eu/">BioASQ Workshop Lab, CLEF 2025</a>.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">ACL 2025 Acceptance</div>
-      <div class="meta">May 2025</div>
-      <p>
-        Our work <em>Training Multi-Modal LLMs through Dialogue Planning for HRI</em> 
-        has been accepted as a <a href="https://2025.aclweb.org/program/find_papers/">Findings of ACL</a> paper.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">Conference Presentation</div>
-      <div class="meta">April 2025</div>
-      <p>
-        Presented our work <em>Adapting LLMs for Domain-Specific Retrieval: A Case Study in Nuclear Safety</em> 
-        as an oral talk in the <a href="https://ecir2025.eu/industry-day/">Industry Track at ECIR 2025</a>, held in Lucca on April 10.
-      </p>
-    </article>
-
-    <article class="pub">
-      <div class="title">Research Contribution</div>
-      <div class="meta">December 2024</div>
-      <p>
-        Joined the <a href="https://clic2024.ilc.cnr.it/organization/">CALAMITA Data and Evaluation Team</a>, 
-        contributing to the creation of a benchmark for evaluating Italian LLMs across diverse tasks.
-      </p>
-    </article>
-
-  </div>
-</aside>
-  </div>
-  <!-- Projects -->
-<section class="card" id="projects">
-  <h2>Reveal Industry Projects Collaboration</h2>
-  <div class="list">
-    
-    <article>
-  <div class="title"><u>Matchmaking for Innovation</u> - 2024/25</div>
-  <div class="meta">
-    <strong>In collaboration with</strong>: Foundation Rome Technopole<br>
-    Developed a semantic search engine to match technological and innovative challenges with academic research groups and industry projects.<br>
-    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Semantic Search, Knowledge Graphs, Word2Vec
-  </div>
-</article>
-
-<article>
-  <div class="title"><u>Simple Knowledge Organization Systems for the Decommissioning of Nuclear Facilities</u> - 2024</div>
-  <div class="meta">
-    <strong>In collaboration with</strong>: International Atomic Energy Agency (IAEA)<br>
-    Developed a semantic search engine for knowledge management in nuclear decommissioning.<br>
-    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Ontologies, Semantic Search, Knowledge Graphs, Word2Vec<br>
-    <strong>Supporting Publications:</strong> [<a href="https://link.springer.com/chapter/10.1007/978-3-031-88720-8_20">Borazio et al. 2025</a>]
-
-  </div>
-</article>
-
-<article>
-  <div class="title"><u>Italian Network of Epidemic Intelligence</u> - 2023/24</div>
-  <div class="meta">
-    <strong>In collaboration with</strong>: Italian Public Ministry of Health<br>
-    Developed monitoring tools for pandemic events using NLP and machine learning for automatic analysis of online information.<br>
-    <strong>Keywords:</strong> Python, Java, Transformer, Solr, Zero-Shot Learning, Web Scraping, Word2Vec <br>
-    <strong>Supporting Publications:</strong> [<a href="https://aclanthology.org/2024.politicalnlp-1.8/">Borazio et al. 2024</a>, <a href="https://journals.openedition.org/ijcol/1250">Croce et al. 2023</a>]
-  </div>
-</article>
-
-
-  </div>
-</section>
-
-    <!-- Teaching -->
-    <section class="card" id="teaching">
-      <h2>Teaching Assistant</h2>
-      <div class="list">
-        <article>
-          <div class="title"><a href="http://sag.art.uniroma2.it/didattica/basili/DL_24_25/">Deep Learning</a></div>
-          <div class="meta">AY: 2024-25 and 2023-24  / Computer Engineering Master Degree</div>
-        </article>
-        <article>
-          <div class="title"><a href="https://engineering-sciences.uniroma2.it/fundamentals-of-computing-2/">Fundamentals of Computing</a></div>
-          <div class="meta">AY: 2023-24  /  Engineering Sciences Bachelor Degree</div>
-        </article>
-        <article>
-          <div class="title"><a href="http://www.informatica.uniroma2.it/">Computer Programming with Laboratory</a></div>
-          <div class="meta">AY: 2022-23  /  Computer Science Bachelor Degree</div>
-        </article>
+            <article class="pub">
+              <div class="title"><strong>Upcoming Presentation</strong></div>
+              <div class="meta muted">September 2025</div>
+              <p>Our system <strong>UniTor at BioASQ 2025</strong> will be presented as a poster and oral talk at the <a href="https://www.bioasq.org/workshop13/program">BioASQ Workshop @ CLEF 2025</a> in Madrid, Spain.</p>
+            </article>
+            
+            <article class="pub">
+              <div class="title"><strong>Poster Presentation</strong></div>
+              <div class="meta muted">July 2025</div>
+              <p>Our work on <em>Training Multi-Modal LLMs for HRI</em> will be presented at <a href="https://docs.google.com/spreadsheets/d/1O-n3HPvv8vY0L_kjyP5AtRTcWWjqLk2deCYtrMgCGw4/edit?gid=580461323#gid=580461323">ACL 2025</a> in Vienna, Austria.</p>
+            </article>
+          </div>
+        </aside>
       </div>
-    </section>
 
-    <!-- Contacts -->
-    <section class="card" id="contacts">
-      <h2>Contacts</h2>
-      <ul>
-        <li>📧 Email: <a href="mailto:borazio@ing.uniroma2.it">borazio@ing.uniroma2.it</a></li>
-        <li>🏛️ Office: Via del Politecnico 1, Information Engineering Building, Block D, 2nd Floor, Room 20</li>
-      </ul>
-    </section>
+      <section class="card reveal" id="projects">
+        <h2>Reveal Industry Projects Collaboration</h2>
+        <div class="list">
+          <article class="pub">
+            <div class="title"><strong>Matchmaking for Innovation</strong> - 2024/25</div>
+            <div class="meta muted">
+              <strong>In collaboration with</strong>: Foundation Rome Technopole<br>
+              Developed a semantic search engine to match technological and innovative challenges with academic research groups and industry projects.<br>
+              <strong>Keywords:</strong> Python, Java, Transformer, Solr, Semantic Search, Knowledge Graphs
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="title"><strong>Simple Knowledge Organization Systems for the Decommissioning of Nuclear Facilities</strong> - 2024</div>
+            <div class="meta muted">
+              <strong>In collaboration with</strong>: International Atomic Energy Agency (IAEA)<br>
+              Developed a semantic search engine for knowledge management in nuclear decommissioning.<br>
+              <strong>Keywords:</strong> Python, Java, Transformer, Solr, Ontologies, Semantic Search<br>
+              <strong>Supporting Publications:</strong> [<a href="https://link.springer.com/chapter/10.1007/978-3-031-88720-8_20">Borazio et al. 2025</a>]
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="title"><strong>Italian Network of Epidemic Intelligence</strong> - 2023/24</div>
+            <div class="meta muted">
+              <strong>In collaboration with</strong>: Italian Public Ministry of Health<br>
+              Developed monitoring tools for pandemic events using NLP and machine learning for automatic analysis of online information.<br>
+              <strong>Keywords:</strong> Python, Java, Transformer, Solr, Zero-Shot Learning, Web Scraping<br>
+              <strong>Supporting Publications:</strong> [<a href="https://aclanthology.org/2024.politicalnlp-1.8/">Borazio et al. 2024</a>, <a href="https://journals.openedition.org/ijcol/1250">Croce et al. 2023</a>]
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card reveal" id="teaching">
+        <h2>Teaching Assistant</h2>
+        <div class="list">
+          <article class="pub">
+            <div class="title"><strong><a href="http://sag.art.uniroma2.it/didattica/basili/DL_24_25/">Deep Learning</a></strong></div>
+            <div class="meta muted">AY: 2024-25 and 2023-24 / Computer Engineering Master Degree</div>
+          </article>
+          <article class="pub">
+            <div class="title"><strong><a href="https://engineering-sciences.uniroma2.it/fundamentals-of-computing-2/">Fundamentals of Computing</a></strong></div>
+            <div class="meta muted">AY: 2023-24 / Engineering Sciences Bachelor Degree</div>
+          </article>
+          <article class="pub">
+            <div class="title"><strong><a href="http://www.informatica.uniroma2.it/">Computer Programming with Laboratory</a></strong></div>
+            <div class="meta muted">AY: 2022-23 / Computer Science Bachelor Degree</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card reveal" id="contacts">
+        <h2>Contacts</h2>
+        <ul>
+          <li>📧 Email: <a href="mailto:borazio@ing.uniroma2.it">borazio@ing.uniroma2.it</a></li>
+          <li>🏛️ Office: Via del Politecnico 1, Information Engineering Building, Block D, 2nd Floor, Room 20</li>
+        </ul>
+      </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Federico Borazio. All rights reserved.</p>
+      <p>&copy; <span id="current-year"></span> Federico Borazio. All rights reserved.</p>
     </footer>
 
     <script>
-  const btnTheme = document.getElementById('theme');
-  const heroImg = document.getElementById('hero-img');
+      // 1. Gestione Tema
+      const btnTheme = document.getElementById('theme');
+      const heroImg = document.getElementById('hero-img');
 
-  btnTheme.addEventListener('click', () => {
-    const isLight = document.documentElement.classList.toggle('light');
-    // Cambia l'immagine a seconda del tema
-    heroImg.src = isLight ? 'Borazio_picture_light.jpeg' : 'Borazio_picture.jpeg';
-  });
+      btnTheme.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light');
+        heroImg.src = isLight ? 'Borazio_picture_light.jpeg' : 'Borazio_picture.jpeg';
+      });
 
-  // Animazione reveal sulle sezioni
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+      // 2. Animazione Reveal sulle sezioni (Ora funzionante!)
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Ferma l'osservazione una volta apparso
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // 3. Filtri Pubblicazioni
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const publications = document.querySelectorAll('#pub-list .pub');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Rimuovi classe active dagli altri bottoni
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          publications.forEach(pub => {
+            if (filterValue === 'all' || pub.getAttribute('data-category') === filterValue) {
+              pub.classList.remove('hidden');
+            } else {
+              pub.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 4. Anno Dinamico nel Footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
